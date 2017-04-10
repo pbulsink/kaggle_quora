@@ -3,10 +3,14 @@ library(SnowballC)
 library(parallel)
 library(pbapply)
 
-buildSubmission<-function(predict_vals){
+buildSubmission<-function(predict_vals, comment, commentfile="./submissions/submissions.txt"){
   submission<-data.frame(test_id=c(0:2345795), is_duplicate = predict_vals)
-  filename<-paste0("./submissions/submisison-", paste(unlist(strsplit(as.character(Sys.time()), ' ')), collapse='-'), ".csv")
+  dt<-unlist(strsplit(as.character(Sys.time()), ' '))
+  dt[2]<-paste(unlist(strsplit(dt[2], ':')), collapse="-")
+  filename<-paste0("./submissions/submisison-", paste(dt, collapse='-'), ".csv")
   write.csv(submission, file=filename, row.names = FALSE, col.names = TRUE)
+  comment<-paste(filename, comment, sep = ": ")
+  cat(comment, file=commentfile, append=TRUE, sep="\n")
 }
 
 logLoss = function(pred, actual){
