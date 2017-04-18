@@ -18,15 +18,15 @@ logLoss = function(pred, actual){
 }
 
 #Kaggle Prep
-train<-read.csv("./data/train.csv")
+trg<-read.csv("./data/train.csv")
 test<-read.csv("./data/test.csv")
 
-train$id<-as.integer(train$id)
-train$qid1<-as.integer(train$qid1)
-train$qid2<-as.integer(train$qid2)
-train$is_duplicate<-as.integer(train$is_duplicate)
-train$question1<-as.character(train$question1)
-train$question2<-as.character(train$question2)
+trg$id<-as.integer(trg$id)
+trg$qid1<-as.integer(trg$qid1)
+trg$qid2<-as.integer(trg$qid2)
+trg$is_duplicate<-as.integer(trg$is_duplicate)
+trg$question1<-as.character(trg$question1)
+trg$question2<-as.character(trg$question2)
 test$question1<-as.character(test$question1)
 test$question2<-as.character(test$question2)
 
@@ -40,9 +40,11 @@ retoken<-function(x){
 cl<-makeCluster(detectCores()-1)
 clusterExport(cl, c('retoken', 'unlist','removeFeatures','tokenize','tolower','stopwords', 'paste','gsub', 'wordStem'))
 
-train$question1b <- pbsapply(train$question1, retoken, cl=cl)
-train$question2b <- pbsapply(train$question2, retoken, cl=cl)
+trg$question1b <- pbsapply(trg$question1, retoken, cl=cl)
+trg$question2b <- pbsapply(trg$question2, retoken, cl=cl)
+gc(verbose = FALSE)
 test$question1b <- pbsapply(test$question1, retoken, cl=cl)
 test$question2b <- pbsapply(test$question2, retoken, cl=cl)
+gc(verbose = FALSE)
 
 stopCluster(cl)
