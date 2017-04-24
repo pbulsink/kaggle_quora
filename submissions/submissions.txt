@@ -1,2 +1,8 @@
 Submissions
 ./submissions/submission-2017-04-07-21-29-03.csv: Submisison of just 1's to ensure formatting is ok
+./submissions/submisison-2017-04-23-20-22-22.csv: GBM modeled w/ repeatedcv including cosine similarity, string comparison, sentiment, and capital letter adjustments
+./submissions/submisison-2017-04-23-20-22-27.csv: RDA modeled w/ repeatedcv including cosine similarity, string comparison, sentiment, and capital letter adjustments
+./submissions/submisison-2017-04-23-20-22-32.csv: LDA modeled w/ repeatedcv including cosine similarity, string comparison, sentiment, and capital letter adjustments
+./submissions/submisison-2017-04-24-06-28-55.csv: GBM modeled w/ repeatedcv including cosine similarity, string comparison, sentiment, and capital letter adjustments. Adjusted to 0/1 at 0.475% prediction
+./submissions/submisison-2017-04-24-06-28-59.csv: RDA modeled w/ repeatedcv including cosine similarity, string comparison, sentiment, and capital letter adjustments. Adjusted to 0/1 at 0.425% prediction
+./submissions/submisison-2017-04-24-06-30-20.csv: LDA modeled w/ repeatedcv including cosine similarity, string comparison, sentiment, and capital letter adjustments. Adjusted to 0/1 at 0.425% prediction
