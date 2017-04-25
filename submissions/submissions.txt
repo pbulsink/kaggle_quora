@@ -6,3 +6,5 @@ Submissions
 ./submissions/submisison-2017-04-24-06-28-55.csv: GBM modeled w/ repeatedcv including cosine similarity, string comparison, sentiment, and capital letter adjustments. Adjusted to 0/1 at 0.475% prediction
 ./submissions/submisison-2017-04-24-06-28-59.csv: RDA modeled w/ repeatedcv including cosine similarity, string comparison, sentiment, and capital letter adjustments. Adjusted to 0/1 at 0.425% prediction
 ./submissions/submisison-2017-04-24-06-30-20.csv: LDA modeled w/ repeatedcv including cosine similarity, string comparison, sentiment, and capital letter adjustments. Adjusted to 0/1 at 0.425% prediction
+./submissions/submisison-2017-04-25-08-58-11.csv: First H2O with stacked models
+./submissions/submisison-2017-04-25-09-01-35.csv: First H2O with stacked models. Submission of odds instead of 0/1
